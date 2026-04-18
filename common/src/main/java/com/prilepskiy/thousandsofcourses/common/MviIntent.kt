@@ -1,0 +1,3 @@
+package com.prilepskiy.thousandsofcourses.common
+
+interface MviIntent
