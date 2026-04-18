@@ -1,15 +1,21 @@
 package com.prilepskiy.thousandsofcourses.navigation.graph
 
+import android.app.Activity
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.platform.LocalView
+import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.prilepskiy.thousandsofcourses.R
 import com.prilepskiy.thousandsofcourses.navigation.AppScreens
 import com.prilepskiy.thousandsofcourses.navigation.BottomNavigationBar
 import com.prilepskiy.thousandsofcourses.presintation.courseDetail.CourseDetailScreen
@@ -17,6 +23,8 @@ import com.prilepskiy.thousandsofcourses.presintation.courseScreen.CourseScreen
 import com.prilepskiy.thousandsofcourses.presintation.favoritesScreen.FavoritesScreen
 import com.prilepskiy.thousandsofcourses.presintation.loginScreen.LoginScreen
 import com.prilepskiy.thousandsofcourses.presintation.profileScreen.ProfileScreen
+import com.prilepskiy.thousandsofcourses.ui.theme.NavBarColor
+import com.prilepskiy.thousandsofcourses.ui.theme.background
 
 @Composable
 fun RootNavGraph(
@@ -31,6 +39,7 @@ fun RootNavGraph(
     }
     Scaffold(
         bottomBar = {
+            SetNavigationBarColor(isBottomBarVisible)
             if (isBottomBarVisible)
                 BottomNavigationBar(navController = rootNavController)
         }
@@ -73,4 +82,16 @@ fun RootNavGraph(
 
         }
     }
+}
+
+
+@Composable
+private fun SetNavigationBarColor(isBottomBarVisible:Boolean) {
+    val view = LocalView.current
+    val context = view.context
+
+    val activity = context as? Activity ?: return
+    val window = activity.window
+    WindowCompat.setDecorFitsSystemWindows(window, false)
+    window.navigationBarColor = if (!isBottomBarVisible)background.toArgb() else NavBarColor.toArgb()
 }

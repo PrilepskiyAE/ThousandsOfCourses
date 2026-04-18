@@ -1,5 +1,6 @@
 package com.prilepskiy.thousandsofcourses.navigation
 
+import android.app.Activity
 import android.util.Log
 import androidx.compose.material3.Divider
 import androidx.compose.material3.HorizontalDivider
@@ -10,11 +11,17 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+
+import androidx.compose.ui.platform.LocalView
+import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.prilepskiy.thousandsofcourses.R
 import com.prilepskiy.thousandsofcourses.common.Sizes
 import com.prilepskiy.thousandsofcourses.common.Spaces
+import com.prilepskiy.thousandsofcourses.ui.theme.NavBarColor
 import com.prilepskiy.thousandsofcourses.ui.theme.PurpleGrey40
 
 @Composable
@@ -24,15 +31,19 @@ fun BottomNavigationBar(navController: NavController) {
         thickness = Spaces.space2,
         color = PurpleGrey40
     )
-    NavigationBar(containerColor=Color.Black, contentColor = Color.White) {
+    NavigationBar(containerColor=NavBarColor, ) {
         BottomNavItem.values().forEach { item ->
 
             val selected = currentRoute?.startsWith(item.nav.route) == true
             NavigationBarItem(
                 icon = {
-                    Icon(item.icon, contentDescription = item.title)
+                    Icon(
+                        imageVector = item.icon,
+                        contentDescription = item.title,
+                        tint = if (selected) Color.Green else Color.White
+                    )
                 },
-                label = { Text(item.title) },
+                label = { Text(item.title,color= if (selected) Color.Green else Color.White ) },
                 selected = selected,
                 onClick = {
                     navController.navigate(item.nav.route) {

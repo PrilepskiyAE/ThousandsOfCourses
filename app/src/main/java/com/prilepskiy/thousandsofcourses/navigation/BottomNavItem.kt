@@ -4,6 +4,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.outlined.Favorite
+import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Person
 import androidx.compose.ui.graphics.vector.ImageVector
 
 enum class BottomNavItem(
@@ -11,7 +14,7 @@ enum class BottomNavItem(
     val icon: ImageVector,
     val title: String
 ) {
-    Courses(AppScreens.Home, Icons.Filled.Home, "Home"),
-    Favorites(AppScreens.Favorites, Icons.Filled.Favorite, "Favorites"),
-    Profile(AppScreens.Profile, Icons.Filled.Person, "Profile")
+    Courses(AppScreens.Home, Icons.Outlined.Home, "Home"),
+    Favorites(AppScreens.Favorites, Icons.Outlined.Favorite, "Favorites"),
+    Profile(AppScreens.Profile, Icons.Outlined.Person, "Profile")
 }
