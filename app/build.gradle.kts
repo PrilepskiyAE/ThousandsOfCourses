@@ -36,20 +36,19 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
+    buildFeatures {
+        compose = true
+    }
     composeOptions {
         kotlinCompilerExtensionVersion = "2.2.0"
     }
-
     kotlinOptions {
         jvmTarget = "17"
-    }
-
-    buildFeatures {
-        compose = true
     }
 }
 
 dependencies {
+    implementation(project(":common"))
     implementation(project(":presentation"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
