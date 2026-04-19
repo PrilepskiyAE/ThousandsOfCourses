@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_screen_title">Вход</string>
+    <string name="login_screen_email_label">Email</string>
+    <string name="login_screen_email_placeholder">example@gmail.com</string>
+    <string name="login_screen_password_label">Пароль</string>
+    <string name="login_screen_password_plaseholder">Введите пароль</string>,
+    <string name="login_screen_button_login">Вход</string>,
+
+</resources>

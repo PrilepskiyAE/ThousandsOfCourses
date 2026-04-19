@@ -1,4 +1,4 @@
-package com.prilepskiy.thousandsofcourses.presintation.loginScreen
+package com.prilepskiy.thousandsofcourses.presintation.screens.courseDetail
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -13,7 +13,7 @@ import com.prilepskiy.thousandsofcourses.common.Sizes
 import com.prilepskiy.thousandsofcourses.common.Spaces
 
 @Composable
-fun LoginScreen(navigate: ()->Unit) {
+fun CourseDetailScreen(navigate: ()->Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -21,6 +21,6 @@ fun LoginScreen(navigate: ()->Unit) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(modifier = Modifier.clickable(onClick = {navigate.invoke()}), text = "Login Screen", fontSize = Sizes.size24)
+        Text(modifier = Modifier.clickable(onClick = {navigate.invoke()}), text = "Course Detail Screen", fontSize = Sizes.size24)
     }
 }

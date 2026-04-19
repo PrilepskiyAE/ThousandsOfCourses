@@ -1,4 +1,4 @@
-package com.prilepskiy.thousandsofcourses.presintation.profileScreen
+package com.prilepskiy.thousandsofcourses.presintation.screens.favoritesScreen
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -13,7 +13,7 @@ import com.prilepskiy.thousandsofcourses.common.Sizes
 import com.prilepskiy.thousandsofcourses.common.Spaces
 
 @Composable
-fun ProfileScreen(navigate: ()->Unit) {
+fun FavoritesScreen(navigate: ()->Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -21,6 +21,6 @@ fun ProfileScreen(navigate: ()->Unit) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(modifier = Modifier.clickable(onClick = {navigate.invoke()}), text = "Profile Screen", fontSize = Sizes.size24)
+        Text(modifier = Modifier.clickable(onClick = {navigate.invoke()}), text = "Favorites Screen", fontSize = Sizes.size24)
     }
 }
