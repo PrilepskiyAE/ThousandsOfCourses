@@ -44,6 +44,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = "17"
+        freeCompilerArgs = listOf("-XXLanguage:+PropertyParamAnnotationDefaultTargetMode")
     }
 }
 
@@ -72,4 +73,5 @@ dependencies {
     implementation(libs.dagger.hilt)
     implementation (libs.androidx.window)
     implementation(libs.mobileads)
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.36.0")
 }
