@@ -12,4 +12,8 @@ val Pink40 = Color(0xFF7D5260)
 
 val NavBarColor = Color(0xFF24252A)
 
-val background = Color(0xFF151515)
+val Background = Color(0xFF151515)
+
+val Transparent = Color(0x00151515)
+
+val Stroke = Color(0xFF4D555E)

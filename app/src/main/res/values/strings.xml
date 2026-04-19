@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ThousandsOfCourses</string>
+    <string name="page_home">Главная</string>
+    <string name="page_favorite">Избранное</string>
+    <string name="page_profile">Аккаунт</string>
 </resources>

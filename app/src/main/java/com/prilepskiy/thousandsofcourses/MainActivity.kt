@@ -18,6 +18,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.prilepskiy.thousandsofcourses.navigation.graph.RootNavGraph
 import com.prilepskiy.thousandsofcourses.ui.theme.ThousandsOfCoursesTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,10 +30,13 @@ class MainActivity : ComponentActivity() {
 
         enableEdgeToEdge()
         setContent {
-            val window = (this as Activity).window
+            val systemUiController = rememberSystemUiController()
             SideEffect {
-                WindowCompat.getInsetsController(window, window.decorView)
-                    .isAppearanceLightStatusBars = false
+                systemUiController.setSystemBarsColor(
+                    color = Color.Transparent,
+                    darkIcons = false,
+                    isNavigationBarContrastEnforced = false
+                )
             }
             ThousandsOfCoursesTheme {
                 RootNavGraph()
