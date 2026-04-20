@@ -56,7 +56,11 @@ fun RootNavGraph(
                 }
             }
             composable(AppScreens.LoginScreen.route) {
-                LoginRoute(navigate={ rootNavController.navigate(AppScreens.Home.route) })
+                LoginRoute(navigate={ rootNavController.navigate(AppScreens.Home.route){
+                    popUpTo(rootNavController.graph.startDestinationId) {
+                        inclusive = true
+                    }
+                } })
             }
 
             composable(AppScreens.DetailCourseHome.route) {
