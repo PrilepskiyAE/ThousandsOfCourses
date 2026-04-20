@@ -5,7 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Stable
 @Serializable
-sealed class AppScreens(val route: String,val list: List<String> = listOf()) : AppNavigation {
+sealed class AppScreens(val route: String) {
     @Stable
     @Serializable
     data object Home : AppScreens("Home")

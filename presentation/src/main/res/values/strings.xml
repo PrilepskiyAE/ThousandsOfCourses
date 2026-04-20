@@ -5,6 +5,11 @@
     <string name="login_screen_email_placeholder">example@gmail.com</string>
     <string name="login_screen_password_label">Пароль</string>
     <string name="login_screen_password_plaseholder">Введите пароль</string>,
-    <string name="login_screen_button_login">Вход</string>,
-
+    <string name="login_screen_button_login">Вход</string>
+    <string name="login_footer_component_text">"Нет аккаунта? "</string>
+    <string name="login_footer_component_button_1">Регистрация</string>
+    <string name="login_footer_component_button_2">Забыли пароль</string>,
+    <string name="button_repite">Повторить</string>
+    <string name="passwrod_error">passwrod не валиден</string>
+    <string name="email_error">email не валиден</string>
 </resources>

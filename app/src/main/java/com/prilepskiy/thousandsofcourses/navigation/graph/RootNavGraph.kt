@@ -15,7 +15,7 @@ import com.prilepskiy.thousandsofcourses.navigation.BottomNavigationBar
 import com.prilepskiy.thousandsofcourses.presintation.screens.courseDetail.CourseDetailScreen
 import com.prilepskiy.thousandsofcourses.presintation.screens.courseScreen.CourseScreen
 import com.prilepskiy.thousandsofcourses.presintation.screens.favoritesScreen.FavoritesScreen
-import com.prilepskiy.thousandsofcourses.presintation.screens.loginScreen.LoginScreen
+import com.prilepskiy.thousandsofcourses.presintation.screens.loginScreen.LoginRoute
 import com.prilepskiy.thousandsofcourses.presintation.screens.profileScreen.ProfileScreen
 
 @Composable
@@ -26,12 +26,11 @@ fun RootNavGraph(
     val currentBackStack by rootNavController.currentBackStackEntryAsState()
     val currentRoute = currentBackStack?.destination?.route
     val isBottomBarVisible = when (currentRoute) {
-        AppScreens.LoginScreen.route -> false
+        AppScreens.LoginScreen.route,null -> false
         else -> true
     }
     Scaffold(
         bottomBar = {
-         //   SetNavigationBarColor(isBottomBarVisible)
             if (isBottomBarVisible)
                 BottomNavigationBar(navController = rootNavController)
         }
@@ -57,7 +56,7 @@ fun RootNavGraph(
                 }
             }
             composable(AppScreens.LoginScreen.route) {
-                LoginScreen() { rootNavController.navigate(AppScreens.Home.route) }
+                LoginRoute(navigate={ rootNavController.navigate(AppScreens.Home.route) })
             }
 
             composable(AppScreens.DetailCourseHome.route) {

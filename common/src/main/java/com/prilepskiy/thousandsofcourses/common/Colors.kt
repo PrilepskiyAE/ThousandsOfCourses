@@ -13,3 +13,7 @@ val Background = Color(0xFF151515)
 val GreenColor = Color(0xFF12B956)
 
 val RedErrorColor=  Color(0xFFFF0000)
+
+val DarkGreenColor = Color(0xFF12B956)
+
+val BlueColor = Color (0xFF2683ED)

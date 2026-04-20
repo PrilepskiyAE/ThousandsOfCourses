@@ -35,8 +35,8 @@ fun LoginComponent(
     onValueChangeEmail: (String) -> Unit,
     passwordText: String,
     onValueChangePassword: (String) -> Unit,
-    emailErrorMessage: String?,
-    passwordErrorMessage: String?
+    validEmail : Boolean? ,
+    validPasswrod :Boolean?,
 
 ) {
     var isPasswordVisible by remember { mutableStateOf(false) }
@@ -50,7 +50,7 @@ fun LoginComponent(
                 fontStyle = FontStyle.Normal,
                 fontSize = Sizes.size16,
                 lineHeight = Sizes.size18,
-                letterSpacing = Sizes.size015
+                letterSpacing = Sizes.size05
             )
         )
 
@@ -66,9 +66,9 @@ fun LoginComponent(
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
         )
 
-        if (emailErrorMessage != null) {
+        if (validEmail ==false) {
             Text(
-                text = emailErrorMessage,
+                text = stringResource(R.string.email_error),
                 color = RedErrorColor,
             )
         }
@@ -83,7 +83,7 @@ fun LoginComponent(
                 fontStyle = FontStyle.Normal,
                 fontSize = Sizes.size16,
                 lineHeight = Sizes.size18,
-                letterSpacing = Sizes.size015
+                letterSpacing = Sizes.size05
             )
         )
 
@@ -112,9 +112,9 @@ fun LoginComponent(
             visualTransformation = if (isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation()
         )
 
-        if (passwordErrorMessage != null) {
+        if (validPasswrod == false) {
             Text(
-                text = passwordErrorMessage,
+                text = stringResource(R.string.passwrod_error),
                 color = RedErrorColor,
             )
         }
