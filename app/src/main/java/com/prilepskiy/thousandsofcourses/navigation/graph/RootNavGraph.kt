@@ -1,14 +1,10 @@
 package com.prilepskiy.thousandsofcourses.navigation.graph
 
-import android.app.Activity
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.platform.LocalView
-import androidx.core.view.WindowCompat
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -16,14 +12,11 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.prilepskiy.thousandsofcourses.navigation.AppScreens
 import com.prilepskiy.thousandsofcourses.navigation.BottomNavigationBar
-import com.prilepskiy.thousandsofcourses.presintation.courseDetail.CourseDetailScreen
-import com.prilepskiy.thousandsofcourses.presintation.courseScreen.CourseScreen
-import com.prilepskiy.thousandsofcourses.presintation.favoritesScreen.FavoritesScreen
-import com.prilepskiy.thousandsofcourses.presintation.loginScreen.LoginScreen
-import com.prilepskiy.thousandsofcourses.presintation.profileScreen.ProfileScreen
-import com.prilepskiy.thousandsofcourses.ui.theme.Background
-import com.prilepskiy.thousandsofcourses.ui.theme.NavBarColor
-import com.prilepskiy.thousandsofcourses.ui.theme.Transparent
+import com.prilepskiy.thousandsofcourses.presintation.screens.courseDetail.CourseDetailScreen
+import com.prilepskiy.thousandsofcourses.presintation.screens.courseScreen.CourseScreen
+import com.prilepskiy.thousandsofcourses.presintation.screens.favoritesScreen.FavoritesScreen
+import com.prilepskiy.thousandsofcourses.presintation.screens.loginScreen.LoginRoute
+import com.prilepskiy.thousandsofcourses.presintation.screens.profileScreen.ProfileScreen
 
 @Composable
 fun RootNavGraph(
@@ -33,12 +26,11 @@ fun RootNavGraph(
     val currentBackStack by rootNavController.currentBackStackEntryAsState()
     val currentRoute = currentBackStack?.destination?.route
     val isBottomBarVisible = when (currentRoute) {
-        AppScreens.LoginScreen.route -> false
+        AppScreens.LoginScreen.route,null -> false
         else -> true
     }
     Scaffold(
         bottomBar = {
-         //   SetNavigationBarColor(isBottomBarVisible)
             if (isBottomBarVisible)
                 BottomNavigationBar(navController = rootNavController)
         }
@@ -64,7 +56,7 @@ fun RootNavGraph(
                 }
             }
             composable(AppScreens.LoginScreen.route) {
-                LoginScreen() { rootNavController.navigate(AppScreens.Home.route) }
+                LoginRoute(navigate={ rootNavController.navigate(AppScreens.Home.route) })
             }
 
             composable(AppScreens.DetailCourseHome.route) {

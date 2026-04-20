@@ -471,6 +471,8 @@ object Spaces {
 // Sizes (sp)
 object Sizes {
     val size0 = 0.sp
+    val size05 = 0.5.sp
+    val size04 = 0.4.sp
     val size2 = 2.sp
     val size3 = 3.sp
     val size5 = 5.sp
@@ -488,6 +490,7 @@ object Sizes {
     val size24 = 24.sp
     val size26 = 26.sp
     val size28 = 28.sp
+    val size36 = 36.sp
     val size32 = 32.sp
     val size48 = 48.sp
     val size60 = 60.sp

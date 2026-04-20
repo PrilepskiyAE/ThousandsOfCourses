@@ -8,6 +8,7 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import com.prilepskiy.thousandsofcourses.common.Background
 
 private val DarkColorScheme = darkColorScheme(
     primary = Color(0xFFBB86FC),

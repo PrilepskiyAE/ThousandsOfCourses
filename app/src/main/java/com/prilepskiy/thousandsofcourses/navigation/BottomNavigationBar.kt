@@ -16,9 +16,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.prilepskiy.thousandsofcourses.common.NavBarColor
 import com.prilepskiy.thousandsofcourses.common.Spaces
-import com.prilepskiy.thousandsofcourses.ui.theme.NavBarColor
-import com.prilepskiy.thousandsofcourses.ui.theme.Stroke
+import com.prilepskiy.thousandsofcourses.common.StrokeColor
+
 
 @Composable
 fun BottomNavigationBar(navController: NavController) {
@@ -26,7 +27,7 @@ fun BottomNavigationBar(navController: NavController) {
     Column(){
         HorizontalDivider(
             thickness = Spaces.space2,
-            color =  Stroke
+            color =  StrokeColor
         )
         NavigationBar(containerColor=NavBarColor, ) {
             BottomNavItem.entries.forEach { item ->
