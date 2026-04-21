@@ -73,5 +73,6 @@ dependencies {
     implementation(libs.dagger.hilt)
     implementation (libs.androidx.window)
     implementation(libs.mobileads)
-    implementation("com.google.accompanist:accompanist-systemuicontroller:0.36.0")
+    implementation(libs.accompanist.systemuicontroller)
+
 }
