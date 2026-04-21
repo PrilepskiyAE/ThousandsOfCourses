@@ -13,7 +13,12 @@ import com.prilepskiy.thousandsofcourses.common.Sizes
 import com.prilepskiy.thousandsofcourses.common.Spaces
 
 @Composable
-fun ProfileScreen(navigate: ()->Unit) {
+fun ProfileRoute(navigate: () -> Unit) {
+    ProfileScreen()
+}
+
+@Composable
+private fun ProfileScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -21,6 +26,10 @@ fun ProfileScreen(navigate: ()->Unit) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(modifier = Modifier.clickable(onClick = {navigate.invoke()}), text = "Profile Screen", fontSize = Sizes.size24)
+        Text(
+            modifier = Modifier.clickable(onClick = {}),
+            text = "Profile Screen",
+            fontSize = Sizes.size24
+        )
     }
 }

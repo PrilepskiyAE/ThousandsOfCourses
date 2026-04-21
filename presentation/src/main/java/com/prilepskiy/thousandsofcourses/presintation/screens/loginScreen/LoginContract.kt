@@ -13,7 +13,7 @@ sealed class LoginIntent : MviIntent {
     data class OnError(val error: String?) : LoginIntent()
     data class OnLoading(val isLoading: Boolean) : LoginIntent()
     data class OnChangePassword(val password: String) : LoginIntent()
-    data class OnChangeEmail(val email: String,) : LoginIntent()
+    data class OnChangeEmail(val email: String) : LoginIntent()
 
 
 }
@@ -21,8 +21,8 @@ sealed class LoginIntent : MviIntent {
 sealed class LoginAction : MviAction {
     data class OnError(val error: String?) : LoginAction()
     data class OnLoading(val isLoading: Boolean) : LoginAction()
-    data class OnChangePassword(val password: String, val validPassword:  Boolean) : LoginAction()
-    data class OnChangeEmail(val email: String, val validEmail:  Boolean) : LoginAction()
+    data class OnChangePassword(val password: String, val validPassword: Boolean) : LoginAction()
+    data class OnChangeEmail(val email: String, val validEmail: Boolean) : LoginAction()
 
     data object OnClickLogin : LoginAction()
 }
@@ -33,8 +33,8 @@ data class LoginState(
     override val error: String? = null,
     override val isLoading: Boolean = true,
     val password: String = "",
-    val validPassword: Boolean?= null,
-    val email: String="",
-    val validEmail: Boolean?= null,
-    val loginSuccessfull:Boolean=false
+    val validPassword: Boolean? = null,
+    val email: String = "",
+    val validEmail: Boolean? = null,
+    val loginSuccessfull: Boolean = false
 ) : MviState

@@ -12,11 +12,11 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.prilepskiy.thousandsofcourses.navigation.AppScreens
 import com.prilepskiy.thousandsofcourses.navigation.BottomNavigationBar
-import com.prilepskiy.thousandsofcourses.presintation.screens.courseDetail.CourseDetailScreen
-import com.prilepskiy.thousandsofcourses.presintation.screens.courseScreen.CourseScreen
-import com.prilepskiy.thousandsofcourses.presintation.screens.favoritesScreen.FavoritesScreen
+import com.prilepskiy.thousandsofcourses.presintation.screens.courseDetail.CourseDetailRoute
+import com.prilepskiy.thousandsofcourses.presintation.screens.favoritesScreen.FavoriteRoute
+import com.prilepskiy.thousandsofcourses.presintation.screens.homeScreen.HomeRoute
 import com.prilepskiy.thousandsofcourses.presintation.screens.loginScreen.LoginRoute
-import com.prilepskiy.thousandsofcourses.presintation.screens.profileScreen.ProfileScreen
+import com.prilepskiy.thousandsofcourses.presintation.screens.profileScreen.ProfileRoute
 
 @Composable
 fun RootNavGraph(
@@ -41,17 +41,16 @@ fun RootNavGraph(
             modifier = Modifier.padding(paddingValues)
         ) {
             composable(AppScreens.Home.route) {
-                CourseScreen() {
+                HomeRoute(navigate = {
                     rootNavController.navigate(AppScreens.DetailCourseHome.route)
-                }
+                })
             }
             composable(AppScreens.Favorites.route) {
-                FavoritesScreen() {
-                    rootNavController.navigate(AppScreens.DetailCourseFavorite.route)
-                }
+                FavoriteRoute(navigate = { rootNavController.navigate(AppScreens.DetailCourseFavorite.route) })
+
             }
             composable(AppScreens.Profile.route) {
-                ProfileScreen() {
+                ProfileRoute() {
                     rootNavController.navigate(AppScreens.DetailCourseProfile.route)
                 }
             }
@@ -64,15 +63,15 @@ fun RootNavGraph(
             }
 
             composable(AppScreens.DetailCourseHome.route) {
-                CourseDetailScreen() {}
+                CourseDetailRoute() {}
             }
 
             composable(AppScreens.DetailCourseProfile.route) {
-                CourseDetailScreen() {}
+                CourseDetailRoute() {}
             }
 
             composable(AppScreens.DetailCourseFavorite.route) {
-                CourseDetailScreen() {}
+                CourseDetailRoute() {}
             }
 
         }

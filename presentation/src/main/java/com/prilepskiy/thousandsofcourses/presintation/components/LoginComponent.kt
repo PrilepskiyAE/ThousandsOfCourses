@@ -30,15 +30,15 @@ import com.prilepskiy.thousandsofcourses.presintation.R
 
 @Composable
 fun LoginComponent(
-    modifier: Modifier=Modifier,
+    modifier: Modifier = Modifier,
     emailText: String,
     onValueChangeEmail: (String) -> Unit,
     passwordText: String,
     onValueChangePassword: (String) -> Unit,
-    validEmail : Boolean? ,
-    validPasswrod :Boolean?,
+    validEmail: Boolean?,
+    validPasswrod: Boolean?,
 
-) {
+    ) {
     var isPasswordVisible by remember { mutableStateOf(false) }
     Column(modifier) {
         Text(
@@ -66,7 +66,7 @@ fun LoginComponent(
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
         )
 
-        if (validEmail ==false) {
+        if (validEmail == false) {
             Text(
                 text = stringResource(R.string.email_error),
                 color = RedErrorColor,

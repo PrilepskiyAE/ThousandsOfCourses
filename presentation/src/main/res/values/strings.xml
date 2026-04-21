@@ -12,4 +12,10 @@
     <string name="button_repite">Повторить</string>
     <string name="passwrod_error">passwrod не валиден</string>
     <string name="email_error">email не валиден</string>
+
+    <string name="search_component_search_placeholder">Search courses...</string>
+    <string name="soft_component_button_sort">"По дате добавления "</string>
+    <string name="course_list_component_button">Подробнее</string>
+    <string name="rub">₽</string>
+    <string name="favorite_title">Избранное</string>
 </resources>

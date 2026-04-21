@@ -36,17 +36,18 @@ fun BaseTextFieldComponent(
     keyboardActions: KeyboardActions = KeyboardActions.Default,
     fontSize: TextUnit = Sizes.size14,
     visualTransformation: VisualTransformation = VisualTransformation.None,
+    backgroundColor: Color = LightGrayColor
 ) {
 
     BasicTextField(
         modifier = modifier
             .background(
-                SolidColor(LightGrayColor),
+                SolidColor(backgroundColor),
                 RoundedCornerShape(Spaces.space32),
             )
             .fillMaxWidth(),
         visualTransformation = visualTransformation,
-        keyboardOptions=keyboardOptions,
+        keyboardOptions = keyboardOptions,
         keyboardActions = keyboardActions,
         value = valueText,
         onValueChange = {
@@ -65,10 +66,12 @@ fun BaseTextFieldComponent(
             ) {
                 if (leadingIcon != null) leadingIcon()
 
-                Box(Modifier.weight(1f).padding(horizontal = Spaces.space16)) {
+                Box(Modifier
+                    .weight(1f)
+                    .padding(horizontal = Spaces.space16)) {
                     if (valueText.isEmpty()) {
                         Text(
-                          //modifier = Modifier.padding(horizontal = Spaces.space16),
+                            //modifier = Modifier.padding(horizontal = Spaces.space16),
                             text = placeholderText,
                             style = LocalTextStyle.current.copy(
                                 color = WhiteColor.copy(alpha = 0.3f),

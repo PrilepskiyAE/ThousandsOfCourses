@@ -7,7 +7,7 @@ val DarkGreyColor = Color(0xFF696969)
 val StrokeColor = Color(0xFF4D555E)
 val WhiteColor = Color(0xFFF2F2F3)
 val LightGrayColor= Color(0xFF32333A)
-val NavBarColor = Color(0xFF24252A)
+val NavBarColor = Color(0xFF24252)
 val Background = Color(0xFF151515)
 
 val GreenColor = Color(0xFF12B956)
@@ -17,3 +17,7 @@ val RedErrorColor=  Color(0xFFFF0000)
 val DarkGreenColor = Color(0xFF12B956)
 
 val BlueColor = Color (0xFF2683ED)
+
+val DarkGrayColor = Color(0xFF24252A)
+
+ val GlassColor=Color(0xFF32333A)

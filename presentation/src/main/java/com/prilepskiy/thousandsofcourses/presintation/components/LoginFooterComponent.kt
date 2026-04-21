@@ -35,7 +35,7 @@ fun LoginFooterComponent(
                 textAlign = TextAlign.Center,
                 fontFamily = FontFamily.SansSerif,
                 fontWeight = FontWeight.W600,
-                )
+            )
             Text(
                 modifier = Modifier.clickable(onClick = { signUpButton() }),
                 text = stringResource(R.string.login_footer_component_button_1),

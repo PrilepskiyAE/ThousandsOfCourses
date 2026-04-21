@@ -29,6 +29,7 @@ arrowVersion = "1.2.0"
 appcompatVersion = "1.7.0"
 window = "1.5.1"
 lifecycleProcess = "2.10.0"
+constraintlayoutCompose = "1.1.1"
 
 [libraries]
 
@@ -68,6 +69,7 @@ arrow-fxstm = { group = "io.arrow-kt", name = "arrow-fx-stm", version.ref = "arr
 arrow-coroutines = { group = "io.arrow-kt", name = "arrow-fx-coroutines", version.ref = "arrowVersion" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompatVersion" }
 androidx-lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "lifecycleProcess" }
+androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "constraintlayoutCompose" }
 
 
 [plugins]

@@ -31,6 +31,7 @@ import com.prilepskiy.thousandsofcourses.common.GreenColor
 import com.prilepskiy.thousandsofcourses.common.Sizes
 import com.prilepskiy.thousandsofcourses.common.Spaces
 import com.prilepskiy.thousandsofcourses.common.StrokeColor
+import com.prilepskiy.thousandsofcourses.common.WhiteColor
 import com.prilepskiy.thousandsofcourses.presintation.R
 import com.prilepskiy.thousandsofcourses.presintation.components.ErrorMessageComponent
 import com.prilepskiy.thousandsofcourses.presintation.components.LoadingComponent
@@ -113,6 +114,7 @@ private fun LoginScreen(
 
         Spacer(modifier = Modifier.height(Spaces.space24))
         Button(
+            enabled = validEmail == true && validPasswrod == true,
             onClick = onClickLogin,
             modifier = Modifier
                 .fillMaxWidth()
@@ -121,7 +123,9 @@ private fun LoginScreen(
             shape = RoundedCornerShape(Spaces.space30),
             colors = ButtonDefaults.buttonColors(
                 containerColor = GreenColor,
-                contentColor = Color.White
+                contentColor = WhiteColor,
+                disabledContentColor = Color.Gray,
+                disabledContainerColor = GreenColor
             ),
 
             ) {

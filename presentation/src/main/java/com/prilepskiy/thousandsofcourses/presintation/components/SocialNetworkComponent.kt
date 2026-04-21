@@ -79,8 +79,7 @@ fun SocialNetworkComponent(
                             colors = listOf(Color(0xFFF98509), Color(0xFFF95D00))
                         ),
                         shape = RoundedCornerShape(Spaces.space30)
-                    )
-                ,
+                    ),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
