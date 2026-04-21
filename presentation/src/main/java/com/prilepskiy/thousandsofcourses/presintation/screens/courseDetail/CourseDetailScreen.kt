@@ -13,7 +13,12 @@ import com.prilepskiy.thousandsofcourses.common.Sizes
 import com.prilepskiy.thousandsofcourses.common.Spaces
 
 @Composable
-fun CourseDetailScreen(navigate: ()->Unit) {
+fun CourseDetailRoute(navigate: () -> Unit) {
+    CourseDetailScreen()
+}
+
+@Composable
+private fun CourseDetailScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -21,6 +26,10 @@ fun CourseDetailScreen(navigate: ()->Unit) {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(modifier = Modifier.clickable(onClick = {navigate.invoke()}), text = "Course Detail Screen", fontSize = Sizes.size24)
+        Text(
+            modifier = Modifier.clickable(onClick = {}),
+            text = "Course Detail Screen",
+            fontSize = Sizes.size24
+        )
     }
 }
